@@ -1,12 +1,19 @@
+import md5 from "md5";
+
 export const defaultState = {
+  // session: {
+  //   authenticated: false
+  // },
   users: [
     {
       id: "U1",
-      name: "Jess"
+      name: "Jess",
+      passwordHash: md5("NOOPNOOP")
     },
     {
       id: "U2",
-      name: "Ness"
+      name: "Ness",
+      passwordHash: md5("BLACKJACK")
     }
   ],
   groups: [
