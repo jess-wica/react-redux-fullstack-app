@@ -2,7 +2,7 @@ import React from "react";
 import * as mutations from "../store/mutations";
 import { connect } from "react-redux";
 
-const LoginComponent = ({ authenticateUser }) => {
+const LoginComponent = ({ authenticateUser, authenticated }) => {
   return (
     <div>
       <h2>Please login</h2>
@@ -29,7 +29,7 @@ const LoginComponent = ({ authenticateUser }) => {
 };
 
 const mapStateToProps = ({ session }) => ({
-  authenticate: session.authenticated
+  authenticated: session.authenticated
 });
 
 const mapDispatchToProps = dispatch => ({

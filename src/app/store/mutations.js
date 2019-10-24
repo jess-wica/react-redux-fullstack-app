@@ -45,14 +45,20 @@ export const requestAuthenticateUser = (username, password) => ({
   password
 });
 
-export const processAuthenticateUser = (status = AUTHENTICATING, session = null) => ({
+export const processAuthenticateUser = (
+  status = AUTHENTICATING,
+  session = null
+) => ({
   type: PROCESS_AUTHENTICATE_USER,
   session,
   authenticated: status
 });
 
-export const processAuthenticateUser = (username, password) => ({
-  type: PROCESS_AUTHENTICATE_USER,
-  username,
-  password
+export const NoAuthenticatedUser = (
+  status = NOT_AUTHENTICATED,
+  session = null
+) => ({
+  type: NOT_AUTHENTICATED,
+  session,
+  authenticated: status
 });
