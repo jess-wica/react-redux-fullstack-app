@@ -7,7 +7,7 @@ import { history } from "../store/history";
 import { ConnectedNavigation } from "./Navigation";
 import { ConnectedTaskDetail } from "./TaskDetail";
 import { Redirect } from "react-router";
-import { ConnectLogin, ConnectedLogin } from "./Login";
+import { ConnectedLogin } from "./Login";
 
 const RouteGuard = Component => ({ match }) => {
   console.info("Route guard".match);
@@ -25,12 +25,12 @@ export const Main = () => (
         <Route
           exact
           path="/dashboard"
-          render={RouteGuard(<ConnectedDashboard />)}
+          render={RouteGuard(ConnectedDashboard)}
         />
         <Route
           exact
           path="/task/:id"
-          render={RouteGuard(<ConnectedTaskDetail />)}
+          render={RouteGuard(ConnectedTaskDetail)}
         />
       </div>
     </Provider>
